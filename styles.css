@@ -1,0 +1,119 @@
+body {
+  background:url("back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  color: #616161;
+  padding: 35px 0;
+}
+br { display: block; line-height: 1.6em;} 
+input, textarea { 
+  background-color: #000066;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+  outline: none; 
+}
+table { border-collapse: collapse; border-spacing: 0;}
+img { border: 0; max-width: 100%; }
+
+h1 { 
+  font-family: 'Raleway', sans-serif;
+  color: #646464;
+  font-size: 4.4em;
+  line-height: 1.6em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2.8em;
+  line-height: 1.55em;
+  margin-bottom: 4px;
+  color: #888;
+}
+
+p {
+  padding-top: 15px;
+  font-size: 1.8em;
+  line-height: 1.55em;
+  margin-bottom: 12px;
+  color: #a6a6a6;
+}
+
+a { 
+  color: #6e91cc;
+}
+a:hover {
+  color: #6e91fb;
+}
+
+#w {
+  display: block;
+  width: 30%;
+  margin: auto;
+  background: #00004d;
+  padding: 15px 25px;
+  border-radius: 4px;
+}
+
+#apidata {
+  display: block;
+  padding: 25px 0;
+}
+
+#loader {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.avi {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.avi img {
+  padding: 3px;
+}
+#username {
+  font-family: 'Raleway';
+  display: block;
+  padding: 5px 8px;
+  font-size: 1.4em;
+  width: 40%;
+  margin-bottom: 15px;
+  color: #a6a6a6;
+  border-style: groove;
+  border-width: thin;
+  border-radius: 20px;
+  border-color: #002b80;
+}
+
+#submitbtn {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  background-color: #eaeaea;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-bottom-color: #c5c5c5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+@media only screen and (max-width: 1400px) {
+  .avi img{
+    width:60px;
+    height:60px;
+  }
+   p{
+       font-size: 0.9em;
+       padding-top: 8px;
+   }
+   #username{
+    font-size: 1.0em;
+   }
+}

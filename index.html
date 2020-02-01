@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Github Explorer</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="w">
+    <h1>Github Explorer</h1>    
+    <input type="text" name="username" id="username" placeholder="Github username">
+    
+    <a href="#" id="submitbtn">Search</a>
+    
+    <div id="apidata" ></div>
+  </div>
+<script type="text/javascript">
+$(function(){
+  $('#submitbtn').on('click', function(e){
+    e.preventDefault();
+    $('#apidata').html('<div id="loader"><img src="rty.gif"></div>');
+    
+    var username = $('#username').val();
+    var requri   = 'https://api.github.com/users/'+username;
+    var repouri  = 'https://api.github.com/users/'+username+'/repos';
+    
+    requestJSON(requri, function(json) {
+      if(json.message == "Not Found" || username == '') {
+        $('#apidata').html("<h2>No User Info Found</h2>");
+      }
+      
+      else {
+        var fullname   = json.name;
+        var username   = json.login;
+        var aviurl     = json.avatar_url;
+        var profileurl = json.html_url;
+        var location   = json.location;
+        var followersnum = json.followers;
+        var followingnum = json.following;
+        var reposnum     = json.public_repos;
+        
+        if(fullname == undefined) { fullname = username; }
+        var outhtml = '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="130" height="130" alt="'+username+'"></a></div>';
+         outhtml = outhtml + '<p>'+fullname+'(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)<br>Followers : '+followersnum+' <br> Following : '+followingnum+'<br>Repositories : '+reposnum+'</p></div>';
+         outhtml = outhtml + '<div class="repolist">';
+        
+        var repositories;
+        $.getJSON(repouri, function(json){
+          repositories = json;   
+          outputPageContent();                
+        });          
+        
+        function outputPageContent() {
+          
+          $('#apidata').html(outhtml);
+        } // end outputPageContent()
+      } // end else statement
+    }); // end requestJSON Ajax call
+  }); // end click event handler
+  
+  function requestJSON(url, callback) {
+    $.ajax({
+      url: url,
+      complete: function(xhr) {
+        callback.call(null, xhr.responseJSON);
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

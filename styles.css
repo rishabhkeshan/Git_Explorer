@@ -114,14 +114,21 @@ a:hover {
     height:20%;
   }
   .avi img{
-    width:60px;
-    height:60px;
+    width:80px;
+    height:80px;
   }
    p{
-       font-size: 0.9em;
+       font-size:1.4em;
        padding-top: 8px;
    }
    #username{
     font-size: 1.0em;
+    width: 60%;
+    height:10%;
+    color:#e6e6e6;
+   }
+   ::placeholder{
+    color:#e6e6e6;
+    font-size: 1.2em;
    }
 }

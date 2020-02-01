@@ -105,6 +105,12 @@ a:hover {
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 @media only screen and (max-width: 1400px) {
+  body{
+    height:100vh;
+  }
+  #w{
+    margin :20vh auto;
+  }
   .avi img{
     width:60px;
     height:60px;

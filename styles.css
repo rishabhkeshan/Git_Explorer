@@ -106,29 +106,35 @@ a:hover {
 }
 @media only screen and (max-width: 1400px) {
   body{
-    height:100vh;
+    height:88vh;
   }
   #w{
-    margin :20vh auto;
+    margin : auto;
     width:50%;
-    height:20%;
   }
   .avi img{
-    width:80px;
-    height:80px;
+    width:60px;
+    height:60px;
+  }
+  h1{
+    font-size: 3.0em;
   }
    p{
-       font-size:1.4em;
+       font-size:1.1em;
        padding-top: 8px;
    }
    #username{
-    font-size: 1.0em;
-    width: 60%;
-    height:10%;
+    font-size: 0.8em;
+    width: 65%;
+    height:13%;
     color:#e6e6e6;
    }
    ::placeholder{
     color:#e6e6e6;
     font-size: 1.2em;
+   }
+   #submitbtn{
+    padding:4px 9px;
+    font-size: 1.0em;
    }
 }
